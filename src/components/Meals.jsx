@@ -1,8 +1,18 @@
 import { useGlobalContext } from "../context";
 
 const Meals = () => {
-  const context = useGlobalContext();
-  return <h1>{context}, this is the Meals component</h1>;
+  const {meals} = useGlobalContext();
+
+  return (
+    <>
+      <section>
+        {meals.map((singleMeal) => {
+          console.log(singleMeal);
+          return <h4>Single Meal</h4>
+        })}
+      </section>
+    </>
+  );
 };
 
 export default Meals;
